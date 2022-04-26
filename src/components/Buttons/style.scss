@@ -1,0 +1,54 @@
+@use '../../sass' as vars;
+$buttonColor: (
+    'primary': vars.$primaryColor,
+    'gray': rgba(0,0,0,.05)
+);
+
+$textColors: (
+    'white' : vars.$whiteColor,
+    'black' : vars.$textColor
+);
+
+$hoverColor: (
+    'primary': vars.$primaryHover,
+    'gray': vars.$grayHover
+);
+.btn
+{
+    display: inline-block;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    transition: all .3s;
+    &:disabled
+    {
+        opacity: 0.8;
+    }
+
+    @each $name, $color in $buttonColor {
+        &.bg-#{$name}{
+            background:$color;
+        } 
+    };
+    
+    @each $name, $color in $textColors {
+        &.text-#{$name}{
+            color:$color;
+        } 
+    };
+
+    @each $name, $color in $hoverColor {
+        &.hover-#{$name}:hover{
+            background:$color;
+        } 
+    };
+    
+    
+}
+

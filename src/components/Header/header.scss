@@ -1,0 +1,106 @@
+@use '../../sass' as vars;
+
+.header-top 
+{
+    box-shadow: 1px 0px 4px 1px rgba($color: #000000, $alpha: .2);
+    padding: 6px 0; 
+    width: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    background-color: vars.$whiteColor;
+    top: 0;
+    & > .container{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+        @include vars.breakpoint-down(md)
+        {
+            flex-wrap: wrap;
+        }
+        & .logo
+        {
+            color: vars.$primaryColor;
+            font-size: 1.4rem;
+            @include vars.breakpoint-down(md)
+            {
+                font-size: 1.2rem;
+            }
+            @include vars.breakpoint-down(xxs)
+            {
+                font-size: 1rem;
+            }
+        }
+
+        & .menu-btn
+        {
+            border: none;
+            background:transparent;
+            font-size: 18px;
+            cursor: pointer;
+            display: none;
+            margin-left: auto;
+
+            @include vars.breakpoint-down(md)
+            {
+               display: inline-block;
+            }
+        }
+        & .menu
+        {
+            display: flex;
+            flex: 1;
+            align-items: center;
+
+            @include vars.breakpoint-down(md)
+            {
+                flex: 100%;
+                background:vars.$whiteColor;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                &:not(.active){
+                    display: none;
+                }
+            }
+
+            & .list-option
+            {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                width: auto;
+                @include vars.breakpoint-down(md)
+                {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+                    width: 100%;
+                }
+            }
+            & .login-register
+            {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                margin-left: auto;
+                
+                @include vars.breakpoint-down(md)
+                {
+                    margin-left: inherit;
+                }
+    
+                & .btn
+                {
+                    font-size: 14px;
+                    white-space: nowrap;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+   
+}
+

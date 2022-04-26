@@ -1,0 +1,31 @@
+@use './sass' as vars;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: vars.$primaryFont;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+.container
+{
+    width: 100%;
+    padding: 0px 100px;
+    @include vars.breakpoint-down(lg)
+    {
+        padding: 0px 40px;
+    }
+
+    @include vars.breakpoint-down(sm)
+    {
+        padding: 0px 20px;
+    }
+    @include vars.breakpoint-down(xs)
+    {
+        padding: 0px 10px;
+    }
+}

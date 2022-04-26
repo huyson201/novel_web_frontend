@@ -1,0 +1,6 @@
+@use '../../sass' as v;
+.main-content
+{
+    padding-top: 60px;
+    color: v.$grayColor;
+}
