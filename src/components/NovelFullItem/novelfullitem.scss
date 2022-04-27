@@ -1,0 +1,17 @@
+@use '../../sass'as v;
+
+
+
+.novel-full-items {
+    padding: 16px;
+    transition: all .3s;
+    background: v.$whiteColor;
+
+    &:hover {
+        background: v.$grayHover;
+    }
+
+    &__cates {
+        margin-top: 8px;
+    }
+}

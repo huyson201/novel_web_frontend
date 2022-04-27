@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoLogInOutline } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 import Button from '../../components/Buttons/Button'
 import InputField from '../../components/InputField/InputField'
 import './login.scss'
@@ -16,14 +17,14 @@ const Login = () => {
                         <InputField title='Email' placeholder='vidu@gmail.com' type='text' />
                         <InputField title='Mật khẩu' type='password' placeholder='*******' />
                         <div className="forgot-password">
-                            <a href="#">Quên mật khẩu?</a>
+                            <Link to="#">Quên mật khẩu?</Link>
                         </div>
                         <div className="form__btn-box">
                             <Button type='submit' title='Đăng nhập' className='btn bg-primary text-white' />
                         </div>
                         <div className="register-link">
                             Bạn chưa có tài khoản?
-                            <a href="#"> Đăng ký.</a>
+                            <Link to="#"> Đăng ký.</Link>
                         </div>
                     </div>
                 </form>

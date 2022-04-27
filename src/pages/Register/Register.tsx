@@ -3,6 +3,7 @@ import { IoCreateOutline, IoCheckmarkOutline } from 'react-icons/io5'
 import InputField from '../../components/InputField/InputField'
 import Button from '../../components/Buttons/Button'
 import './register.scss'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
 
@@ -27,7 +28,7 @@ const Register = () => {
                                 <input onChange={handleCheck} type="checkbox" name="agree-rules" id="agree-rules" />
                                 <div className='custom-check-box'><IoCheckmarkOutline /></div>
                                 <div className='check-box__title'>
-                                    Đồng ý với các <a href="#">điều khoản</a> và <a href="#">chính sách</a>
+                                    Đồng ý với các <Link to="#">điều khoản</Link> và <Link to="#">chính sách</Link>
                                 </div>
                             </label>
                         </div>
@@ -37,7 +38,7 @@ const Register = () => {
 
                         <div className="login-link">
                             Bạn Đã có tài khoản?
-                            <a href="#"> Đăng Nhập.</a>
+                            <Link to="#"> Đăng Nhập.</Link>
                         </div>
                     </div>
                 </form>

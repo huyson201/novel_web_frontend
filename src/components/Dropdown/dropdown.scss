@@ -21,6 +21,7 @@ $columns: 1,2,3;
         cursor: pointer;
         width: 100%;
         white-space: nowrap;
+        font-weight: 500;
         & .arrow-down
         {
             transition: all .3s;
@@ -40,6 +41,11 @@ $columns: 1,2,3;
         &:not(.active) + .drop-content
         {
             display: none;
+        }
+
+        @include vars.breakpoint-down(md)
+        {
+           font-size: 14px;
         }
     }
     
