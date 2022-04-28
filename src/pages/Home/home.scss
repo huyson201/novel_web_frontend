@@ -6,10 +6,20 @@
     background: v.$grayColor;
 }
 
+.slide-content {
+    outline: none !important;
+    border: none !important;
+}
+
 .main-slider {
-    & div.slick-slide {
+
+    & div.slick-slide div,
+    & div.slick-slide div:focus,
+    div.slick-slide div:focus-visible {
         outline: none !important;
         border: none !important;
+        background: transparent;
+
     }
 
     & .slick-dots {
@@ -46,8 +56,6 @@
             border-radius: 8px;
             aspect-ratio: 3 / 1;
             width: 100%;
-            outline: none;
-            border: none;
 
             & img {
 

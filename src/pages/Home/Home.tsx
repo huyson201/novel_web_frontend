@@ -22,7 +22,7 @@ const Home = () => {
         pauseOnHover: true
     }
     const listNovelSliderSettings: Settings = {
-        dots: true,
+        dots: false,
         infinite: false,
         speed: 300,
         slidesToScroll: 1,
@@ -77,27 +77,27 @@ const Home = () => {
                     <section className='novels-hot list-novels-slider'>
                         <h2 className='slider-title'>Truyện đang hot</h2>
                         <Slider className='main-slider'  {...listNovelSliderSettings}>
-                            <div>
+                            <div className='slide-content'>
                                 <Link to={'#'}>
                                     <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                                 </Link>
                             </div>
-                            <div>
+                            <div className='slide-content'>
                                 <Link to={'#'}>
                                     <img src="https://cdn.tienvuc.xyz/media/banners/627f22b02911e14fb800-c63c6e.jpg" alt="slider-img" />
                                 </Link>
                             </div>
-                            <div>
+                            <div className='slide-content'>
                                 <Link to={'#'}>
                                     <img src="https://cdn.tienvuc.xyz/media/banners/1-19d07a.jpg" alt="slider-img" />
                                 </Link>
                             </div>
-                            <div>
+                            <div className='slide-content'>
                                 <Link to={'#'}>
                                     <img src="https://cdn.tienvuc.xyz/media/banners/273235603-481138613497638-3243237241621493393-n-eb6475.jpg" alt="slider-img" />
                                 </Link>
                             </div>
-                            <div>
+                            <div className='slide-content'>
                                 <Link to={'#'}>
                                     <img src="https://cdn.tienvuc.xyz/media/banners/pc-5adb94.png" alt="slider-img" />
                                 </Link>

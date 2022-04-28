@@ -83,3 +83,8 @@ $badgeColor: ('blue' : #3E8ED0,
         text-decoration: underline;
     }
 }
+
+a:-webkit-any-link:focus-visible {
+    outline-offset: 0px;
+    outline: none;
+}
