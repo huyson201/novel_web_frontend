@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Buttons/Button'
-import './readnovel.scss'
+import './chapter.scss'
 import ToolBar from '../../components/ToolBar/ToolBar'
 import LeftNav from '../../components/LeftNav/LeftNav'
 const ReadNovel = () => {

@@ -52,70 +52,14 @@
         padding: 8px 12px;
       }
     }
+
     & .filter {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 6px;
-      $btnSize: 40px;
-      background: v.$whiteColor;
-      padding: 8px 12px;
-
-      &.sticky {
-        position: sticky;
-        left: 0;
-        top: 0;
-        z-index: 99;
-      }
-      &-btn {
-        width: auto;
-        width: $btnSize;
-        height: $btnSize;
-        border: 1px solid #b5b5b5;
-        @include v.centerStyle;
-        &.asc svg:last-child,
-        &.desc svg:first-child {
-          display: none;
-        }
-      }
-      & .search-box {
-        width: calc(100% - $btnSize);
-        height: $btnSize;
-        display: flex;
-        align-items: center;
-        background-color: v.$grayColor;
-        padding: 4px 8px;
-        border-radius: 4px;
-        justify-content: space-between;
-        box-sizing: border-box;
-        gap: 4px;
-
-        &.focused {
-          border: 1px solid v.$primaryColor;
-          & > svg {
-            color: v.$textColor;
-          }
-        }
-
-        & > svg {
-          font-size: 24px;
-          color: #b5b5b5;
-        }
-
-        & input {
-          border: none;
-          outline: none;
-          background-color: transparent;
-          width: 100%;
-          font-size: 15px;
-          padding: 0 6px;
-          &::placeholder {
-            color: #b5b5b5;
-          }
-        }
-      }
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 9;
     }
+
     &__content {
       flex: 1;
       background-color: v.$grayColor;

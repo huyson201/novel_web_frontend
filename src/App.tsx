@@ -5,7 +5,9 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ReadNovel from './pages/ReadNovel/ReadNovel'
+import ReadNovel from './pages/Chapter/Chapter'
+import Default from './pages/Default/Default'
+import Detail from './pages/Detail/Detail'
 function App() {
 
 
@@ -14,8 +16,12 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/' element={<Home />} />
-        <Route path='/reading' element={<ReadNovel />} />
+        <Route path='/' element={<Default />} >
+          <Route index element={<Home />} />
+          <Route path='/:slug' element={<Detail />} />
+          <Route path='/:slug/reading' element={<ReadNovel />} />
+
+        </Route>
       </Routes>
     </div>
   )

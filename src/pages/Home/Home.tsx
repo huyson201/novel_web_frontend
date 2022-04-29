@@ -35,8 +35,6 @@ const Home = () => {
     }
     return (
         <div className='home-page'>
-            {/* header */}
-            <Header />
             {/* main content */}
             <div className="main-content">
                 <div className="container">

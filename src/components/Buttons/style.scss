@@ -3,6 +3,8 @@ $buttonColor: (
   "primary": vars.$primaryColor,
   "gray": rgba(0, 0, 0, 0.05),
   "light": vars.$whiteColor,
+  "blue": vars.$blueColor,
+  "yellow": #ffe08a,
 );
 
 $textColors: (
@@ -13,6 +15,8 @@ $textColors: (
 $hoverColor: (
   "primary": vars.$primaryHover,
   "gray": vars.$grayHover,
+  "blue": vars.$blueColor2,
+  "yellow": #ffdc7d,
 );
 
 .btn {

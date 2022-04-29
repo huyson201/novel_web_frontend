@@ -1,0 +1,23 @@
+@use "../../sass" as v;
+.chapter-items {
+  padding: 8px;
+  border-top: 1px solid v.$separatorColor;
+  transition: all 0.25s;
+  &:last-child {
+    border-bottom: 1px solid v.$separatorColor;
+  }
+  &:hover {
+    background: v.$grayColor;
+  }
+  &__title {
+    margin-bottom: 4px;
+    &-number {
+      font-weight: 600;
+      margin-right: 12px;
+    }
+  }
+  & .times {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
