@@ -8,9 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 import ReadNovel from './pages/Chapter/Chapter'
 import Default from './pages/Default/Default'
 import Detail from './pages/Detail/Detail'
+
 function App() {
-
-
+  console.log(import.meta.env.MODE)
   return (
     <div className="App">
       <Routes>
@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<Default />} >
           <Route index element={<Home />} />
           <Route path='/:slug' element={<Detail />} />
-          <Route path='/:slug/reading' element={<ReadNovel />} />
+          <Route path='/:slug/chapter/:chapterId' element={<ReadNovel />} />
 
         </Route>
       </Routes>

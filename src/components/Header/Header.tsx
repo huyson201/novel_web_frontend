@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { IoMenuOutline } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 import Button from '../Buttons/Button'
 import Dropdown from '../Dropdown/Dropdown'
 import './header.scss'
@@ -12,7 +13,7 @@ const Header = () => {
         <header className="header-top">
             <div className="container">
                 <div className="logo">
-                    <h2>Net Novels</h2>
+                    <Link to={'/'}><h2>Net Novels</h2></Link>
                 </div>
                 <button className='menu-btn' onClick={handleClickBars}><IoMenuOutline /></button>
                 <div className={`menu ${showMenu && 'active'}`}>

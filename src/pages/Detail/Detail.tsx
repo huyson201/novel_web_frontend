@@ -1,21 +1,24 @@
 import React, { useRef, useState } from 'react'
 import { IoPersonCircleOutline } from 'react-icons/io5'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams, useLocation, Location } from 'react-router-dom'
 import Button from '../../components/Buttons/Button'
 import ChapterItem from '../../components/ChapterItem/ChapterItem'
 import Filter from '../../components/Filter/Filter'
-import Pagination from 'rc-pagination';
-import { VscChevronLeft, VscChevronRight } from 'react-icons/vsc'
+import Pagination from '../../components/Pagination/Pagination';
+import FBComment from '../../components/FBComment/FBComment'
+
 import './detail.scss'
+import FBLikeShareButton from '../../components/FBLikeShareButton/FBLikeShareButton'
 const Detail = () => {
     const navigate = useNavigate()
+    const location: Location = useLocation()
     const [searchParams, setSearchParams] = useSearchParams()
     const [currentPage, setCurrentPage] = useState<number>(() => {
         let page = parseInt(searchParams.get('page') || '1')
         return page
     })
     const chaptersCommentRef = useRef<HTMLDivElement>(null)
-
+    let currentHref = import.meta.env.VITE_HOST_NAME + location.pathname
     const paginationOnchange = (current: any, pageSize: any) => {
         setCurrentPage(current)
         setSearchParams(`page=${current}`)
@@ -27,6 +30,9 @@ const Detail = () => {
             })
         }
     }
+
+    if (import.meta.env.MODE === 'development') currentHref = 'https://tienvuc.xyz/account'
+
     return (
         <div className='detail-page'>
             <div className="detail-hero">
@@ -58,6 +64,9 @@ const Detail = () => {
                             <div className="novel-detail__views">
                                 <span className="novel-detail__views-title">Lượt xem</span>
                                 <span className="novel-detail__views-number">160555</span>
+                            </div>
+                            <div className="like-share-button">
+                                <FBLikeShareButton dataHref={currentHref} />
                             </div>
                             <div className="novel-detail__desc">
                                 Lăng Hàn - Một Đan Đế đại danh đỉnh định mang trong thân mình tuyệt thế công pháp vì truy cầu bước cuối, xé bỏ tấm màn thành thần nhưng thất bại đã phải bỏ mình. Thế nhưng ông trời dường như không muốn tuyệt dường người, Lăng Hàn đã được trọng sinh vào một thiếu niên cùng tên và điều may mắn nhất là "Bất Diệt Thiên Kinh" ấn ký vẫn còn nằm nguyên trong tâm thức hắn.
@@ -113,13 +122,9 @@ const Detail = () => {
                                 defaultPageSize={20}
                                 pageSize={20}
                                 className="pagination"
-                                jumpNextIcon={'...'}
-                                jumpPrevIcon='...'
                                 total={5000}
                                 current={currentPage}
                                 defaultCurrent={1}
-                                nextIcon={<VscChevronRight />}
-                                prevIcon={<VscChevronLeft />}
                             />
 
                         </div>
@@ -127,7 +132,9 @@ const Detail = () => {
 
                     <div className="comments">
                         <div className="cmt-title">Bình luận</div>
-                        <div className='cmt-content'></div>
+                        <div className='cmt-content'>
+                            <FBComment numPosts={3} dataHref={'https://tienvuc.xyz/account'} orderBy='reverse_time' />
+                        </div>
                     </div>
                 </div>
             </div>

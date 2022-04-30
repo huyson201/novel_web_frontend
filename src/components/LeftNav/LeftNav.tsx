@@ -35,7 +35,7 @@ const LeftNav = ({ show, onClickOutside }: Props) => {
                 </div>
                 <Filter />
                 <div className="left-nav__content">
-                    <Link to={'#'}>
+                    <Link to={'/'} >
                         <div className="chapter-items active">
                             <div className="chapter-title">
                                 <span className="chapter-number ">1.</span>

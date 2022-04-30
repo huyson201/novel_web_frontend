@@ -20,7 +20,7 @@
       flex-wrap: wrap;
     }
 
-    & .logo {
+    & .logo > a {
       color: vars.$primaryColor;
       font-size: 1.3rem;
 
@@ -66,7 +66,7 @@
       & .list-option {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 24px;
         width: auto;
 
         @include vars.breakpoint-down(md) {
