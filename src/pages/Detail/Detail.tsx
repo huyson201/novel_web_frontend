@@ -12,23 +12,11 @@ import FBLikeShareButton from '../../components/FBLikeShareButton/FBLikeShareBut
 const Detail = () => {
     const navigate = useNavigate()
     const location: Location = useLocation()
-    const [searchParams, setSearchParams] = useSearchParams()
-    const [currentPage, setCurrentPage] = useState<number>(() => {
-        let page = parseInt(searchParams.get('page') || '1')
-        return page
-    })
+
     const chaptersCommentRef = useRef<HTMLDivElement>(null)
     let currentHref = import.meta.env.VITE_HOST_NAME + location.pathname
     const paginationOnchange = (current: any, pageSize: any) => {
-        setCurrentPage(current)
-        setSearchParams(`page=${current}`)
-        if (chaptersCommentRef && chaptersCommentRef.current?.offsetTop) {
-            window.scrollTo({
-                left: 0,
-                top: chaptersCommentRef.current?.offsetTop - 60,
-                behavior: 'smooth'
-            })
-        }
+        console.log(current)
     }
 
     if (import.meta.env.MODE === 'development') currentHref = 'https://tienvuc.xyz/account'
@@ -123,7 +111,7 @@ const Detail = () => {
                                 pageSize={20}
                                 className="pagination"
                                 total={5000}
-                                current={currentPage}
+                                current={1}
                                 defaultCurrent={1}
                             />
 

@@ -1,168 +1,102 @@
-@use "../../sass"as v;
+@use "../../sass" as v;
 
 .main-content {
-    padding-top: 60px;
-    padding-bottom: 32px;
-    background: v.$grayColor;
+  padding-top: 60px;
+  padding-bottom: 32px;
+  background: v.$grayColor;
 }
 
 .slide-content {
-    outline: none !important;
-    border: none !important;
+  outline: none !important;
+  border: none !important;
 }
 
 .main-slider {
+  & div.slick-slide div,
+  & div.slick-slide div:focus,
+  div.slick-slide div:focus-visible {
+    outline: none !important;
+    border: none !important;
+    background: transparent;
+  }
 
-    & div.slick-slide div,
-    & div.slick-slide div:focus,
-    div.slick-slide div:focus-visible {
-        outline: none !important;
-        border: none !important;
-        background: transparent;
+  & .slick-dots {
+    & li {
+      &.slick-active > button::before {
+        color: #003300;
+      }
 
+      & > button::before {
+        font-size: 12px;
+      }
+
+      &:hover > button::before {
+        color: v.$primaryHover;
+      }
     }
-
-    & .slick-dots {
-        & li {
-            &.slick-active>button::before {
-                color: #003300;
-            }
-
-            &>button::before {
-                font-size: 12px;
-            }
-
-            &:hover>button::before {
-                color: v.$primaryHover;
-            }
-        }
-    }
-
+  }
 }
 
 .slider-feature {
-    padding-top: 64px;
+  padding-top: 64px;
 
-    @include v.breakpoint-down(md) {
-        padding-top: 42px;
+  @include v.breakpoint-down(md) {
+    padding-top: 42px;
+  }
+
+  @include v.breakpoint-down(sm) {
+    padding-top: 32px;
+  }
+
+  .swiper-slide-container {
+    border-radius: 8px;
+    aspect-ratio: 3 / 1;
+    width: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-
-    @include v.breakpoint-down(sm) {
-        padding-top: 32px;
-    }
-
-    & .main-slider {
-        & div.slick-slide {
-            border-radius: 8px;
-            aspect-ratio: 3 / 1;
-            width: 100%;
-
-            & img {
-
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        & .slick-dots {
-            bottom: 0;
-        }
-
-
-    }
-}
-
-
-.list-novels-slider {
-    margin-bottom: 44px;
-
-    @include v.breakpoint-down(md) {
-        margin-bottom: 22px;
-    }
-
-    & .main-slider {
-
-        & .slick-slide {
-            & div {
-                width: 200px;
-                aspect-ratio: 2 / 3;
-                margin-right: 32px;
-
-                @include v.breakpoint-down(md) {
-                    width: 90px;
-                    margin-right: 12px;
-                }
-
-                & img {
-
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 8px;
-                }
-            }
-        }
-
-        & .slick-dots {
-            & li {
-
-                &>button::before {
-                    font-size: 8px;
-                }
-            }
-        }
-    }
-}
-
-
-.slider-title {
-    margin-bottom: 24px;
-    font-size: 1.6rem;
-
-    @include v.breakpoint-down(md) {
-        margin-bottom: 12px;
-    }
+  }
 }
 
 .list-novels {
-    padding: 32px 0;
-    display: flex;
-    gap: 28px;
-    justify-content: space-between;
-    $newsWidth: 75%;
+  padding: 32px 0;
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  $newsWidth: 75%;
+
+  @include v.breakpoint-down(md) {
+    flex-wrap: wrap;
+  }
+
+  & .list-contents {
+    background-color: v.$whiteColor;
+    border-radius: 6px;
+    margin-top: 32px;
+  }
+
+  & .titles h2 {
+    color: v.$textColor;
+    font-weight: 800;
+    font-size: 1.4rem;
+  }
+
+  &__news {
+    width: $newsWidth;
 
     @include v.breakpoint-down(md) {
-        flex-wrap: wrap;
+      width: 100%;
     }
+  }
 
-    & .list-contents {
-        background-color: v.$whiteColor;
-        border-radius: 6px;
-        margin-top: 32px;
+  &__full {
+    width: calc(100% - $newsWidth);
+
+    @include v.breakpoint-down(md) {
+      width: 100%;
     }
-
-    & .titles h2 {
-        color: v.$textColor;
-        font-weight: 800;
-        font-size: 1.4rem;
-    }
-
-
-    &__news {
-        width: $newsWidth;
-
-        @include v.breakpoint-down(md) {
-            width: 100%;
-        }
-    }
-
-    &__full {
-        width: calc(100% - $newsWidth);
-
-        @include v.breakpoint-down(md) {
-            width: 100%;
-        }
-    }
-
+  }
 }

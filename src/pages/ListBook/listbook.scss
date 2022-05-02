@@ -1,0 +1,18 @@
+@use "../../sass" as v;
+.list-book-page {
+  padding-top: 96px;
+  padding-bottom: 64px;
+  background: v.$grayColor;
+  .list-book {
+    &__title {
+      margin-bottom: 24px;
+      color: v.$textColor;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    & .pagination-wrapper {
+      position: unset;
+    }
+  }
+}
