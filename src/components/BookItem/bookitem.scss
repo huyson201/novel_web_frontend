@@ -1,0 +1,87 @@
+@use "../../sass" as v;
+.book-items {
+  width: calc(100% / 4);
+  padding: 12px;
+  height: 100%;
+  @include v.breakpoint-down(md) {
+    width: calc(100% / 2);
+    padding: 8px;
+  }
+  @include v.breakpoint-down(sm) {
+    width: calc(100% / 2);
+    padding: 4px;
+  }
+  &__container {
+    background: v.$whiteColor;
+    box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    &:hover img {
+      transform: scale(1.2);
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__title {
+    padding: 8px;
+    font-size: 0.9rem;
+    @media (min-width: 769px) and (max-width: 1204px) {
+      font-size: 0.7rem;
+    }
+
+    & > a {
+      transition: color 0.3s;
+      &:hover {
+        color: v.$primaryColor;
+      }
+    }
+  }
+  &__chapter {
+    text-align: right;
+    padding: 8px;
+    font-size: 16px;
+    font-style: italic;
+    margin-top: auto;
+    @media (min-width: 769px) and (max-width: 1204px) {
+      font-size: 12px;
+    }
+
+    & > a {
+      color: v.$primaryColor;
+      transition: color 0.3s;
+      &:hover {
+        color: v.$textColor;
+      }
+    }
+  }
+
+  & .remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    @include v.centerStyle;
+    background: #feecf0;
+    color: #cc0f35;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s;
+  }
+  &:hover .remove-btn {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,37 @@
+@use "../../sass" as v;
+.profile-page {
+  .profile-title {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  & .profile-info {
+    & .profile-row {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      padding: 8px;
+      & .disabled {
+        opacity: 0.4;
+      }
+      &__title {
+        font-weight: 600;
+      }
+      & .edit-btn {
+        width: auto;
+        margin-left: auto;
+        @include v.centerStyle;
+        gap: 12px;
+        color: v.$primaryColor;
+        font-size: 16px;
+        font-weight: 400;
+        transition: color 0.3s;
+        &:hover {
+          color: v.$textColor;
+        }
+        & svg {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

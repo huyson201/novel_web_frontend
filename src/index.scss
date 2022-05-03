@@ -47,10 +47,15 @@ a {
   background: vars.$separatorColor;
 }
 
-$badgeColor: (
+$tagColor: (
   "blue": #3e8ed0,
   "green": #1eb553,
   "yellow": #ffe08a,
+  "white": vars.$whiteColor,
+);
+$tagTextColors: (
+  "white": vars.$whiteColor,
+  "black": vars.$textColor,
 );
 
 .tag {
@@ -66,9 +71,14 @@ $badgeColor: (
     margin-right: 8px;
   }
 
-  @each $name, $color in $badgeColor {
+  @each $name, $color in $tagColor {
     &.tag-#{$name} {
       background: $color;
+    }
+  }
+  @each $name, $color in $tagTextColors {
+    &.tag-color-#{$name} {
+      color: $color;
     }
   }
 

@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import './listbookslider.scss'
+import BookCardItem from '../BookCardItem/BookCardItem';
 
 export interface Props {
     title?: string
@@ -42,91 +43,83 @@ const ListBookSlider = ({ title }: Props) => {
 
             >
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
-                        <Link to={'#'}>
-                            <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
-                        </Link>
-                    </div>
+                    <BookCardItem className='slide-content' />
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
-                        <Link to={'#'}>
-                            <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
-                        </Link>
-                    </div>
+                    <BookCardItem className='slide-content' />
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide  >
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='swiper-slide swiper-book-card'>
-                    <div className='slide-content'>
+                    <div className='slide-content book-card-items'>
                         <Link to={'#'}>
                             <img src="https://cdn.tienvuc.xyz/media/banners/banner-cong-tu-biet-tu-app-3-eeaa1e.jpg" alt="slider-img" />
                         </Link>

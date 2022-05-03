@@ -1,0 +1,100 @@
+@use "../../sass" as v;
+.account-page {
+  padding-top: 64px;
+  padding-bottom: 32px;
+  background: v.$grayColor;
+
+  & section {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: row;
+    @include v.breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+
+  & .side-bar {
+    // background: red;
+    flex: 0.25;
+    @include v.breakpoint-down(md) {
+      flex: 1;
+    }
+    height: 100vh;
+    &__head {
+      text-align: center;
+      & .user-name {
+        font-size: 1.8rem;
+        color: v.$textColor;
+        font-weight: 600;
+      }
+
+      & .use-email {
+        font-size: 0.9rem;
+        color: rgba($color: #000, $alpha: 0.6);
+        margin-bottom: 4px;
+        color: v.$textColor;
+      }
+
+      & .user-coins {
+        @include v.centerStyle;
+      }
+      & img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    &__menu {
+      list-style: none;
+      padding: 24px 0;
+      @include v.breakpoint-down(md) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        display: flex;
+        padding: 0;
+      }
+
+      & > li {
+        display: block;
+        width: 100%;
+        height: 100%;
+        & .side-bar__links {
+          transition: background 0.3s;
+          padding: 12px;
+          display: flex;
+          font-weight: 600;
+          align-items: center;
+          gap: 8px;
+
+          @include v.breakpoint-down(md) {
+            height: 100%;
+            flex-direction: column;
+            background-color: v.$whiteColor;
+            gap: 0px;
+            font-size: 14px;
+            padding: 4px;
+          }
+
+          & svg {
+            font-size: 1.5rem;
+          }
+          &:hover,
+          &.active {
+            background: #ededed;
+          }
+          &.active {
+            color: v.$primaryColor;
+          }
+        }
+      }
+    }
+  }
+  & .account-content {
+    flex: 0.75;
+    @include v.breakpoint-down(md) {
+      flex: 1;
+    }
+  }
+}

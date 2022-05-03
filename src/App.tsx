@@ -9,14 +9,13 @@ import Detail from './pages/Detail/Detail'
 import ListBook from './pages/ListBook/ListBook'
 import { withListBook, Props } from './HOC/withListBook'
 import Category from './pages/Category/Category'
+import Account from './pages/Account/Account'
+import Bookcase from './pages/Bookcase/Bookcase'
+import Profile from './pages/Profile/Profile'
 
-interface RouterElement {
-  Component: FC<Props>,
-  routePath: string,
-  title?: string
-}
+
 function App() {
-  const listBookRouters: Array<RouterElement> = [
+  const listBookRouters: Array<any> = [
     {
       Component: withListBook(ListBook),
       routePath: 'danh-sach/truyen-moi',
@@ -42,10 +41,14 @@ function App() {
               return <Route path={data.routePath} key={index} element={<data.Component title={data.title} />} />
             })
           }
-          <Route path='/:slug' element={<Detail />} />
-          <Route path='/:slug/chapter/:chapterId' element={<ReadNovel />} />
-          <Route path='/the-loai/:slug' element={<Category />} />
+          <Route path=':slug' element={<Detail />} />
+          <Route path=':slug/chapter/:chapterId' element={<ReadNovel />} />
+          <Route path='the-loai/:slug' element={<Category />} />
 
+          <Route path='account' element={<Account />}>
+            <Route index element={<Bookcase />} />
+            <Route path='profile' element={<Profile />} />
+          </Route>
         </Route>
       </Routes>
     </div>

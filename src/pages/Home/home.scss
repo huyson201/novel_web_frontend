@@ -11,32 +11,6 @@
   border: none !important;
 }
 
-.main-slider {
-  & div.slick-slide div,
-  & div.slick-slide div:focus,
-  div.slick-slide div:focus-visible {
-    outline: none !important;
-    border: none !important;
-    background: transparent;
-  }
-
-  & .slick-dots {
-    & li {
-      &.slick-active > button::before {
-        color: #003300;
-      }
-
-      & > button::before {
-        font-size: 12px;
-      }
-
-      &:hover > button::before {
-        color: v.$primaryHover;
-      }
-    }
-  }
-}
-
 .slider-feature {
   padding-top: 64px;
 
