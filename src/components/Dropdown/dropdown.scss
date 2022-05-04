@@ -1,108 +1,91 @@
-@use '../../sass' as vars;
+@use "../../sass" as vars;
 
-$columns: 1,2,3;
+$columns: 1, 2, 3;
 
-.drop-down
-{
-    position: relative;
-    height: 100%;
+.drop-down {
+  position: relative;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  & .drop-toggle-btn {
+    font-size: 16px;
+    text-transform: capitalize;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    cursor: pointer;
     width: 100%;
-    flex-wrap: wrap;
+    white-space: nowrap;
+    font-weight: 400;
+    & .arrow-down {
+      transition: all 0.3s;
+      color: vars.$primaryColor;
+      margin-top: 2px;
+      pointer-events: none;
+    }
+    &.active {
+      color: vars.$primaryColor;
+    }
+    &.active .arrow-down {
+      transform: rotate(-180deg);
+    }
 
-    & .drop-toggle-btn
-    {
-        font-size: 16px;
-        text-transform: capitalize;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 4px;
-        cursor: pointer;
+    &:not(.active) + .drop-content {
+      display: none;
+    }
+
+    @include vars.breakpoint-down(md) {
+      font-size: 14px;
+    }
+  }
+
+  & .drop-content {
+    position: absolute;
+    bottom: -100%;
+    transform: translateY(95%);
+    padding: 8px;
+    background-color: vars.$whiteColor;
+    box-shadow: 1px 0px 2px 1px rgba($color: #000000, $alpha: 0.2);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    @include vars.breakpoint-down(md) {
+      position: unset;
+      transform: translateY(0%);
+      flex: 100%;
+      box-shadow: none;
+      padding: 16px;
+    }
+    &.grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 12px;
+
+      @include vars.breakpoint-down(md) {
+        gap: 16px;
+      }
+    }
+
+    @each $col in $columns {
+      &.grid.col-#{$col} {
+        grid-template-columns: repeat($col, 1fr);
+        @include vars.breakpoint-down(md) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+
+    &__items {
+      min-width: 150px;
+      display: block;
+      font-size: 14px;
+      text-transform: capitalize;
+      @include vars.breakpoint-down(md) {
         width: 100%;
-        white-space: nowrap;
-        font-weight: 500;
-        & .arrow-down
-        {
-            transition: all .3s;
-            color: vars.$primaryColor;
-            margin-top: 2px;
-            pointer-events: none;
-        }
-        &.active
-        {
-            color: vars.$primaryColor;
-        }
-        &.active .arrow-down
-        {
-            transform: rotate(-180deg);
-        }
-
-        &:not(.active) + .drop-content
-        {
-            display: none;
-        }
-
-        @include vars.breakpoint-down(md)
-        {
-           font-size: 14px;
-        }
+      }
     }
-    
-    & .drop-content
-    {
-        position: absolute;
-        bottom: -100%;
-        transform: translateY(95%);
-        padding: 8px;
-        background-color: vars.$whiteColor;
-        box-shadow: 1px 0px 2px 1px rgba($color: #000000, $alpha: .2);
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-
-        @include vars.breakpoint-down(md)
-        {
-            position: unset;
-            transform: translateY(0%);
-            flex: 100%;
-            box-shadow: none;
-            padding: 16px;
-        }
-        &.grid
-        {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            row-gap: 12px;
-
-            @include vars.breakpoint-down(md)
-            {
-               gap: 16px;
-            }
-        }
-
-        @each $col in $columns {
-            &.grid.col-#{$col}
-            {
-                grid-template-columns: repeat($col, 1fr);
-                @include vars.breakpoint-down(md)
-                {
-                    grid-template-columns: repeat(2, 1fr);
-
-                }
-            }
-        }
-        
-        &__items
-        {
-            min-width: 150px;
-            display: block;
-            font-size: 14px;
-            text-transform: capitalize;
-            @include vars.breakpoint-down(md)
-            {
-               width: 100%;
-            }
-        }
-        
-    }
+  }
 }

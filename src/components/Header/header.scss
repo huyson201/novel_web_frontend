@@ -94,6 +94,40 @@
           padding-right: 8px;
         }
       }
+      & .account {
+        @include vars.breakpoint-down(md) {
+          width: 100%;
+        }
+        @extend .login-register;
+        & .custom-drop {
+          row-gap: 0;
+          padding: 0 !important;
+          & .drop-toggle-btn {
+            font-weight: 400;
+          }
+
+          & .drop-content {
+            @include vars.breakpoint-down(md) {
+              row-gap: 0 !important;
+            }
+          }
+
+          & .drop-items {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 12px;
+            transition: color 0.3s;
+            color: vars.$textColor;
+            &:not(:last-child) {
+              border-bottom: 1px solid vars.$separatorColor;
+            }
+            &:hover {
+              color: vars.$primaryColor;
+            }
+          }
+        }
+      }
     }
   }
 }

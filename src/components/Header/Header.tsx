@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { IoMenuOutline } from 'react-icons/io5'
+import { IoLogOutOutline, IoMenuOutline, IoPersonSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import Button from '../Buttons/Button'
 import Dropdown from '../Dropdown/Dropdown'
@@ -37,6 +37,12 @@ const Header = () => {
                         <Button link path='/register' title='Đăng ký' className='btn hover-primary text-white bg-primary' />
                         <Button link path='/login' title='Đăng nhập' className='btn hover-gray text-black bg-gray' />
                     </div>
+                    {/* <div className="account">
+                        <Dropdown title='Hi, huy son' className='custom-drop' grid>
+                            <Dropdown.Item className='drop-items' leftIcon={<IoPersonSharp />} title='Trang cá nhân' />
+                            <Dropdown.Item className='drop-items' leftIcon={<IoLogOutOutline />} title='Đăng xuất' />
+                        </Dropdown>
+                    </div> */}
                 </div>
             </div>
         </header>
