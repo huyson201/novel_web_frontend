@@ -7,14 +7,22 @@
   & .profile-info {
     & .profile-row {
       display: flex;
-      gap: 60px;
+      
       align-items: center;
       padding: 8px;
       & .disabled {
         opacity: 0.4;
+      
       }
       &__title {
         font-weight: 600;
+        width: 20%;
+      }
+      &__value
+      {
+        display: flex;
+        align-items: center;
+        gap: 4px;
       }
       & .edit-btn {
         width: auto;
@@ -33,5 +41,49 @@
         }
       }
     }
+    & .edit-box
+    {
+      padding: 0 8px;
+      &::after
+      {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      &__fields
+      {
+        margin-bottom: 8px;
+        display: flex;
+        gap: 24px;
+        & input
+        {
+         width: 100%;
+         padding: 6px 12px;
+         outline: none;
+         border-radius: 6px;
+         border: 1px solid v.$grayColor;
+         &:focus
+         {
+           border: 1px solid v.$primaryColor;
+         }
+        }
+
+      }
+      & .btn-save-multi-field
+      {
+        @extend .btn-save;
+        float: right;
+      }
+    }
   }
+}
+.btn-save
+{
+  width: auto;
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 14px;
+  background: v.$primaryColor;
+  color: v.$whiteColor;
+  padding: 4px 8px;
 }
