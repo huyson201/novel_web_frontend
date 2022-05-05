@@ -1,1 +1,1 @@
-export const COOKIE_TOKE_KEY='net_novel_token'
+export const COOKIE_TOKEN_KEY='net_novel_token'

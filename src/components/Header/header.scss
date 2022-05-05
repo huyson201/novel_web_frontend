@@ -107,9 +107,7 @@
           }
 
           & .drop-content {
-            @include vars.breakpoint-down(md) {
-              row-gap: 0 !important;
-            }
+            row-gap: 0 !important;
           }
 
           & .drop-items {

@@ -13,6 +13,12 @@ const authService = {
     },
     register: (data: RegisterData) =>{
         return axiosDefault.post('/register', data)
+    },
+    logout: () =>{
+        return axiosDefault.post('/logout')
+    },
+    profile: ()=>{
+        return axiosDefault.get('/profile')
     }
 }
 

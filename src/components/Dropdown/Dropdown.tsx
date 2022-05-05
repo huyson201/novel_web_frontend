@@ -51,11 +51,12 @@ interface ItemProps {
     title: string,
     leftIcon?: JSX.Element,
     rightIcon?: JSX.Element,
-    className?: string
+    className?: string,
+    onClick?: (e?: MouseEvent) => void
 }
-Dropdown.Item = ({ path, title, leftIcon, rightIcon, className }: ItemProps) => {
+Dropdown.Item = ({ path, title, leftIcon, rightIcon, className, ...props }: ItemProps) => {
     return (
-        <Link className={`drop-content__items ${className || ''}`} to={path || '#'}>
+        <Link {...props} className={`drop-content__items ${className || ''}`} to={path || '#'}>
             {leftIcon && leftIcon}
             {title}
             {rightIcon && rightIcon}

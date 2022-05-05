@@ -5,6 +5,7 @@ import currencyIcon from '../../icons/dollar-circle.svg'
 import { MdOutlineBookmarkAdded } from 'react-icons/md'
 import './account.scss'
 import { IoPersonOutline } from 'react-icons/io5'
+import { useAppSelector } from '../../redux/hooks'
 
 type SidebarItem = {
     icon: JSX.Element,
@@ -26,18 +27,20 @@ const sideBarItems: Array<SidebarItem> = [
 ]
 
 const Account = () => {
+
+    const userState = useAppSelector(state => state.user.userInfo)
     return (
         <div className='account-page'>
             <div className="container">
                 <section>
                     <div className="side-bar">
                         <div className="side-bar__head">
-                            <div className="user-name">Huy Son</div>
-                            <div className="user-email">huyson@gmail.com</div>
+                            <div className="user-name">{userState && `${userState.name.first || ''} ${userState.name.last || ''}`}</div>
+                            <div className="user-email">{userState?.email}</div>
                             <div className="user-coins">
                                 <img src={currencyIcon} alt="dollar icon" />
                                 <span className="coins">
-                                    {formatCurrency(1200)} Xu
+                                    {formatCurrency(userState?.coins || 0)} Xu
                                 </span>
                             </div>
                         </div>

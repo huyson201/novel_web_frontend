@@ -7,12 +7,13 @@ interface Props {
     className?: string,
     disabled?: boolean,
     link?: boolean,
-    path?: string
+    path?: string,
+    state?: any
 }
-const Button = ({ title, type, className, disabled, link, path, ...props }: Props) => {
+const Button = ({ title, type, className, state, disabled, link, path, ...props }: Props) => {
 
     if (link) {
-        return (<Link className={`${disabled ? 'disabled' : ''} ${className}`} to={path || '#'} {...props} >{title || 'Button'} </Link >)
+        return (<Link state={state || null} className={`${disabled ? 'disabled' : ''} ${className}`} to={path || '#'} {...props} >{title || 'Button'} </Link >)
     }
     return (
         <button className={`${className}`} type={type} disabled={disabled && true} {...props}>{title || 'Button'}</button>

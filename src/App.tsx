@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
@@ -12,22 +12,36 @@ import Category from './pages/Category/Category'
 import Account from './pages/Account/Account'
 import Bookcase from './pages/Bookcase/Bookcase'
 import Profile from './pages/Profile/Profile'
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import authService from './apiServices/auth'
+import cookies from './Cookies/cookies'
+import { COOKIE_TOKEN_KEY } from './constants'
+import { useAppDispatch } from './redux/hooks'
+import { setUserInfo } from './redux/userSlice'
 
+const listBookRouters: Array<any> = [
+  {
+    Component: withListBook(ListBook),
+    routePath: 'danh-sach/truyen-moi',
+    title: 'Truyện mới cập nhật'
+  },
+  {
+    Component: withListBook(ListBook),
+    routePath: 'danh-sach/bang-xep-hang',
+    title: 'Bảng Xếp Hạng'
+  },
+]
 
 function App() {
-  const listBookRouters: Array<any> = [
-    {
-      Component: withListBook(ListBook),
-      routePath: 'danh-sach/truyen-moi',
-      title: 'Truyện mới cập nhật'
-    },
-    {
-      Component: withListBook(ListBook),
-      routePath: 'danh-sach/bang-xep-hang',
-      title: 'Bảng Xếp Hạng'
-    },
-  ]
-
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    if (cookies.get(COOKIE_TOKEN_KEY)) {
+      authService.profile().then(res => {
+        let dataResponse = res.data.data
+        dispatch(setUserInfo({ _id: dataResponse._id, email: dataResponse.email, name: dataResponse.name, coins: dataResponse.coins }))
+      })
+    }
+  }, [])
   return (
     <div className="App">
       <Routes>
@@ -45,7 +59,7 @@ function App() {
           <Route path=':slug/chapter/:chapterId' element={<ReadNovel />} />
           <Route path='the-loai/:slug' element={<Category />} />
 
-          <Route path='account' element={<Account />}>
+          <Route path='account' element={<PrivateRoute > <Account /></PrivateRoute>}>
             <Route index element={<Bookcase />} />
             <Route path='profile' element={<Profile />} />
           </Route>
