@@ -4,7 +4,7 @@ interface Props {
     type?: string,
     title?: string,
     placeholder?: string,
-    onChange?: (e: ChangeEvent) => void,
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
     name?: string
 }
 

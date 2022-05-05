@@ -8,13 +8,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "rc-pagination": "^3.1.16",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
+    "react-query": "^3.38.1",
     "react-router-dom": "6",
     "sass": "^1.50.1",
-    "swiper": "^8.1.4"
+    "swiper": "^8.1.4",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
